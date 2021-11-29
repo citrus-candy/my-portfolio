@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderStyle = styled.div`
-	font-size: 48px;
+	font-size: 3rem;
 	display: flex;
 	justify-content: flex-end;
 `
