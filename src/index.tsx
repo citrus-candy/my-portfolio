@@ -2,12 +2,14 @@ import { render } from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import BackgroundAnimation from './components/BackgroundAnimation'
 import Top from './components/Top'
 import Works from './components/Works'
 import About from './components/About'
 
 render(
 	<BrowserRouter>
+		<BackgroundAnimation />
 		<Routes>
 			<Route path="/">
 				<Route index element={<Top />} />

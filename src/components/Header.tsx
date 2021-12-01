@@ -5,6 +5,7 @@ const HeaderStyle = styled.div`
 	font-size: 3rem;
 	display: flex;
 	justify-content: flex-end;
+	margin-top: 40px;
 `
 
 const LinkStyle = styled.div`

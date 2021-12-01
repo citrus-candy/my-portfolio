@@ -12,7 +12,6 @@ export default function Top() {
 		<>
 			<GlobalStyle />
 			<Header />
-			<h1>Top Page</h1>
 		</>
 	)
 }
