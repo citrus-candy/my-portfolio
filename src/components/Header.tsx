@@ -12,6 +12,10 @@ const LinkStyle = styled.div`
 	text-align: center;
 	padding: 0 40px;
 	font-family: 'Fredericka the Great', cursive;
+	& a {
+		text-decoration: none;
+		color: white;
+	}
 `
 
 export default function Header() {

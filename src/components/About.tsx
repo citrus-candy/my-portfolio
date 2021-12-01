@@ -1,11 +1,10 @@
-import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { FaGithub, FaTwitter, FaTimes } from 'react-icons/fa'
 import Header from './Header'
 
 const GlobalStyle = createGlobalStyle`
 	body {
-		background-color: #F5B3CB;
+		background-color: #673ab7;
 	}
 `
 
@@ -30,6 +29,7 @@ const TopContentStyle = styled.div`
 const BottomStyle = styled.div`
 	font-family: 'Josefin Sans', sans-serif;
 	padding: 40px;
+	color: white;
 `
 
 const BottomTitleStyle = styled.div`
@@ -44,6 +44,11 @@ const BottomContentStyle = styled.div`
 	padding: 25px;
 `
 
+const IconButtonStyle = styled.a`
+	height: 40px;
+	color: black;
+`
+
 export default function About() {
 	return (
 		<>
@@ -53,22 +58,20 @@ export default function About() {
 				<TopContentStyle>citrus candy</TopContentStyle>
 				<TopContentStyle>
 					<FaTimes />
-					<a
+					<IconButtonStyle
 						href="https://github.com/citrus-candy"
 						target="_blank"
 						rel="noreferrer"
-						style={{ height: '40px' }}
 					>
 						<FaGithub size="2.5rem" attributeType="" />
-					</a>
-					<a
+					</IconButtonStyle>
+					<IconButtonStyle
 						href="https://twitter.com/fillis_y"
 						target="_blank"
 						rel="noreferrer"
-						style={{ height: '40px' }}
 					>
 						<FaTwitter size="2.5rem" />
-					</a>
+					</IconButtonStyle>
 					<FaTimes />
 				</TopContentStyle>
 			</TopStyle>

@@ -3,7 +3,7 @@ import Header from './Header'
 
 const GlobalStyle = createGlobalStyle`
 	body {
-		background-color: #B3F5F1;
+		background-color: #3f51b5;
 	}
 `
 

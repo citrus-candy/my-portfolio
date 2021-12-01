@@ -1,7 +1,12 @@
 import Header from './Header'
 import WorksCard from './works/Card'
-import styled from 'styled-components'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+	body {
+		background-color: #009688;
+	}
+`
 
 const ContentsWrapperStyle = styled.div`
 	padding: 40px 20px;
@@ -17,12 +22,7 @@ const TitleStyle = styled.div`
 	font-family: 'Josefin Sans', sans-serif;
 	border-bottom: solid 1px;
 	margin-bottom: 10px;
-`
-
-const GlobalStyle = createGlobalStyle`
-	body {
-		background-color: #B3F5C6;
-	}
+	color: white;
 `
 
 export default function Works() {
