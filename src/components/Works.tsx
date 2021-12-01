@@ -14,7 +14,7 @@ const ContentsStyle = styled.div`
 
 const TitleStyle = styled.div`
 	font-size: 3rem;
-	font-family: 'Fredericka the Great', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 	border-bottom: solid 1px;
 	margin-bottom: 10px;
 `
