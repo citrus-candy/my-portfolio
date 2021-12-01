@@ -13,8 +13,10 @@ const ContentsStyle = styled.div`
 `
 
 const TitleStyle = styled.div`
-	font-size: 2rem;
+	font-size: 3rem;
 	font-family: 'Fredericka the Great', cursive;
+	border-bottom: solid 1px;
+	margin-bottom: 10px;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -29,10 +31,7 @@ export default function Works() {
 			<GlobalStyle />
 			<Header />
 			<ContentsWrapperStyle>
-				<TitleStyle>
-					Web
-					<hr />
-				</TitleStyle>
+				<TitleStyle>Web</TitleStyle>
 				<ContentsStyle>
 					<WorksCard />
 					<WorksCard />
@@ -43,10 +42,7 @@ export default function Works() {
 				</ContentsStyle>
 			</ContentsWrapperStyle>
 			<ContentsWrapperStyle>
-				<TitleStyle>
-					Music
-					<hr />
-				</TitleStyle>
+				<TitleStyle>Music</TitleStyle>
 				<ContentsStyle>
 					<WorksCard />
 					<WorksCard />
