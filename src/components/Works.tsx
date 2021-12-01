@@ -1,6 +1,7 @@
 import Header from './Header'
 import WorksCard from './works/Card'
 import styled from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
 const ContentsWrapperStyle = styled.div`
 	padding: 40px 20px;
@@ -16,9 +17,16 @@ const TitleStyle = styled.div`
 	font-family: 'Fredericka the Great', cursive;
 `
 
+const GlobalStyle = createGlobalStyle`
+	body {
+		background-color: #B3F5C6;
+	}
+`
+
 export default function Works() {
 	return (
-		<div>
+		<>
+			<GlobalStyle />
 			<Header />
 			<ContentsWrapperStyle>
 				<TitleStyle>
@@ -48,6 +56,6 @@ export default function Works() {
 					<WorksCard />
 				</ContentsStyle>
 			</ContentsWrapperStyle>
-		</div>
+		</>
 	)
 }
