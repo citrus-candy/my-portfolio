@@ -1,23 +1,21 @@
-import Header from './Header'
 import WorksCard from './works/Card'
 import styled, { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const BodyColor = createGlobalStyle`
 	body {
 		background-color: #009688;
 	}
 `
 
-const ContentsWrapperStyle = styled.div`
+const Container = styled.div`
+	padding-top: 80px;
+`
+
+const Wrapper = styled.div`
 	padding: 40px 20px;
 `
 
-const ContentsStyle = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-`
-
-const TitleStyle = styled.div`
+const Title = styled.div`
 	font-size: 3rem;
 	font-family: 'Josefin Sans', sans-serif;
 	border-bottom: solid 1px;
@@ -25,33 +23,37 @@ const TitleStyle = styled.div`
 	color: white;
 `
 
+const WorksContainer = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+`
+
 export default function Works() {
 	return (
-		<>
-			<GlobalStyle />
-			<Header />
-			<ContentsWrapperStyle>
-				<TitleStyle>Web</TitleStyle>
-				<ContentsStyle>
+		<Container>
+			<BodyColor />
+			<Wrapper>
+				<Title>Web</Title>
+				<WorksContainer>
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
-				</ContentsStyle>
-			</ContentsWrapperStyle>
-			<ContentsWrapperStyle>
-				<TitleStyle>Music</TitleStyle>
-				<ContentsStyle>
+				</WorksContainer>
+			</Wrapper>
+			<Wrapper>
+				<Title>Music</Title>
+				<WorksContainer>
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
 					<WorksCard />
-				</ContentsStyle>
-			</ContentsWrapperStyle>
-		</>
+				</WorksContainer>
+			</Wrapper>
+		</Container>
 	)
 }

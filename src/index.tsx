@@ -6,10 +6,12 @@ import BackgroundAnimation from './components/BackgroundAnimation'
 import Top from './components/Top'
 import Works from './components/Works'
 import About from './components/About'
+import Header from './components/Header'
 
 render(
 	<BrowserRouter>
 		<BackgroundAnimation />
+		<Header />
 		<Routes>
 			<Route path="/">
 				<Route index element={<Top />} />

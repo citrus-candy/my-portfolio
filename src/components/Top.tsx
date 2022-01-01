@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
-import Header from './Header'
 
-const GlobalStyle = createGlobalStyle`
+const BodyColor = createGlobalStyle`
 	body {
 		background-color: #3f51b5;
 	}
@@ -10,8 +9,7 @@ const GlobalStyle = createGlobalStyle`
 export default function Top() {
 	return (
 		<>
-			<GlobalStyle />
-			<Header />
+			<BodyColor />
 		</>
 	)
 }

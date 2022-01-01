@@ -1,14 +1,17 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { FaGithub, FaTwitter, FaTimes } from 'react-icons/fa'
-import Header from './Header'
 
-const GlobalStyle = createGlobalStyle`
+const BodyColor = createGlobalStyle`
 	body {
 		background-color: #673ab7;
 	}
 `
 
-const TopStyle = styled.div`
+const Container = styled.div`
+	padding-top: 80px;
+`
+
+const CardContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	padding: 40px;
@@ -16,7 +19,7 @@ const TopStyle = styled.div`
 	font-family: 'Crafty Girls', cursive;
 `
 
-const TopContentStyle = styled.div`
+const Card = styled.div`
 	width: 350px;
 	height: 60px;
 	display: flex;
@@ -26,74 +29,73 @@ const TopContentStyle = styled.div`
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-const BottomStyle = styled.div`
+const ContentsWrapper = styled.div`
 	font-family: 'Josefin Sans', sans-serif;
 	padding: 40px;
 	color: white;
 `
 
-const BottomTitleStyle = styled.div`
+const Title = styled.div`
 	border-bottom: solid 1px;
 	font-size: 3rem;
 `
 
-const BottomContentStyle = styled.div`
+const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
 	font-size: 2rem;
 	padding: 25px;
 `
 
-const IconButtonStyle = styled.a`
+const IconButton = styled.a`
 	height: 40px;
 	color: black;
 `
 
 export default function About() {
 	return (
-		<>
-			<GlobalStyle />
-			<Header />
-			<TopStyle>
-				<TopContentStyle>citrus candy</TopContentStyle>
-				<TopContentStyle>
+		<Container>
+			<BodyColor />
+			<CardContainer>
+				<Card>citrus candy</Card>
+				<Card>
 					<FaTimes />
-					<IconButtonStyle
+					<IconButton
 						href="https://github.com/citrus-candy"
 						target="_blank"
 						rel="noreferrer"
 					>
 						<FaGithub size="2.5rem" attributeType="" />
-					</IconButtonStyle>
-					<IconButtonStyle
+					</IconButton>
+					<IconButton
 						href="https://twitter.com/fillis_y"
 						target="_blank"
 						rel="noreferrer"
 					>
 						<FaTwitter size="2.5rem" />
-					</IconButtonStyle>
+					</IconButton>
 					<FaTimes />
-				</TopContentStyle>
-			</TopStyle>
-			<BottomStyle>
-				<BottomTitleStyle>Skills</BottomTitleStyle>
-				<BottomContentStyle>
+				</Card>
+			</CardContainer>
+			<ContentsWrapper>
+				<Title>Skills</Title>
+				<Content>
 					<p>Languages</p>
 					<p>HTML / CSS / JavaScript / TypeScript</p>
-				</BottomContentStyle>
-				<BottomContentStyle>
+				</Content>
+				<Content>
 					<p>Frameworks</p>
 					<p>Vue.js / Nuxt.js / React.js</p>
-				</BottomContentStyle>
-				<BottomContentStyle>
+				</Content>
+				<Content>
 					<p>NativeApps</p>
 					<p>Flutter</p>
-				</BottomContentStyle>
-				<BottomContentStyle>
+				</Content>
+				<Content>
 					<p>Other</p>
 					<p>Firebase / GCP / GitHub</p>
-				</BottomContentStyle>
-			</BottomStyle>
-		</>
+				</Content>
+			</ContentsWrapper>
+		</Container>
 	)
 }

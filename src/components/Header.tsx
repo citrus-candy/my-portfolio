@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const HeaderStyle = styled.div`
-	font-size: 3rem;
+const Container = styled.div`
+	font-size: 2rem;
 	display: flex;
 	justify-content: flex-end;
 	margin-top: 40px;
+	position: fixed;
+	right: 10px;
 `
 
-const LinkStyle = styled.div`
+const Wrapper = styled.div`
 	text-align: center;
 	padding: 0 40px;
 	font-family: 'Fredericka the Great', cursive;
@@ -20,16 +22,16 @@ const LinkStyle = styled.div`
 
 export default function Header() {
 	return (
-		<HeaderStyle>
-			<LinkStyle>
+		<Container>
+			<Wrapper>
 				<Link to="/">Top</Link>
-			</LinkStyle>
-			<LinkStyle>
+			</Wrapper>
+			<Wrapper>
 				<Link to="/works">Works</Link>
-			</LinkStyle>
-			<LinkStyle>
+			</Wrapper>
+			<Wrapper>
 				<Link to="/about">About</Link>
-			</LinkStyle>
-		</HeaderStyle>
+			</Wrapper>
+		</Container>
 	)
 }

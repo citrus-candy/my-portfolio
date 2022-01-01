@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
-const AreaStyle = styled.div`
+const Container = styled.div`
 	background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
 	width: 100%;
 	height: 100vh;
@@ -9,7 +9,7 @@ const AreaStyle = styled.div`
 	overflow: hidden;
 `
 
-const CirclesStyle = styled.ul`
+const Wrapper = styled.ul`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -32,7 +32,7 @@ const Animate = keyframes`
 	}
 `
 
-const CircleStyle = styled.li`
+const Circle = styled.li`
 	position: absolute;
 	display: block;
 	list-style: none;
@@ -45,17 +45,17 @@ const CircleStyle = styled.li`
 
 export default function BackgroundAnimation() {
 	return (
-		<AreaStyle>
-			<CirclesStyle>
-				<CircleStyle
+		<Container>
+			<Wrapper>
+				<Circle
 					style={{
 						left: '25%',
 						width: '80px',
 						height: '80px',
 						animationDelay: '0s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '10%',
 						width: '20px',
@@ -63,16 +63,16 @@ export default function BackgroundAnimation() {
 						animationDelay: '2s',
 						animationDuration: '12s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '70%',
 						width: '20px',
 						height: '20px',
 						animationDelay: '4s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '40%',
 						width: '60px',
@@ -80,32 +80,32 @@ export default function BackgroundAnimation() {
 						animationDelay: '0s',
 						animationDuration: '18s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '65%',
 						width: '20px',
 						height: '20px',
 						animationDelay: '0s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '75%',
 						width: '110px',
 						height: '110px',
 						animationDelay: '3s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '35%',
 						width: '150px',
 						height: '150px',
 						animationDelay: '7s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '50%',
 						width: '25px',
@@ -113,8 +113,8 @@ export default function BackgroundAnimation() {
 						animationDelay: '15s',
 						animationDuration: '45s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '20%',
 						width: '15px',
@@ -122,8 +122,8 @@ export default function BackgroundAnimation() {
 						animationDelay: '2s',
 						animationDuration: '35s',
 					}}
-				></CircleStyle>
-				<CircleStyle
+				></Circle>
+				<Circle
 					style={{
 						left: '85%',
 						width: '150px',
@@ -131,8 +131,8 @@ export default function BackgroundAnimation() {
 						animationDelay: '0s',
 						animationDuration: '11s',
 					}}
-				></CircleStyle>
-			</CirclesStyle>
-		</AreaStyle>
+				></Circle>
+			</Wrapper>
+		</Container>
 	)
 }
