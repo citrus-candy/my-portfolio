@@ -30,20 +30,22 @@ const Card = styled.div`
 `
 
 const ContentsWrapper = styled.div`
+	width: 1000px;
 	font-family: 'Josefin Sans', sans-serif;
+	margin: auto;
 	padding: 40px;
 	color: white;
 `
 
 const Title = styled.div`
 	border-bottom: solid 1px;
-	font-size: 3rem;
+	font-size: 2.5rem;
 `
 
 const Content = styled.div`
 	display: flex;
 	justify-content: space-between;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	padding: 25px;
 `
 
