@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.div`
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-family: 'Josefin Sans', sans-serif;
 	border-bottom: solid 1px;
 	margin-bottom: 10px;
@@ -24,8 +24,9 @@ const Title = styled.div`
 `
 
 const WorksContainer = styled.div`
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-rows: 200px 200px 200px;
+	grid-template-columns: 20% 20% 20% 20% 20%;
 `
 
 export default function Works() {
@@ -33,24 +34,15 @@ export default function Works() {
 		<Container>
 			<BodyColor />
 			<Wrapper>
-				<Title>Web</Title>
+				<Title>Programming</Title>
 				<WorksContainer>
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
+					<WorksCard row="1 / 2" column="1 / 2" />
+					<WorksCard row="1 / 2" column="2 / 4" width="200%" />
 				</WorksContainer>
 			</Wrapper>
 			<Wrapper>
 				<Title>Music</Title>
 				<WorksContainer>
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
-					<WorksCard />
 					<WorksCard />
 				</WorksContainer>
 			</Wrapper>
