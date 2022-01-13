@@ -4,30 +4,28 @@ import styled from 'styled-components'
 type CardProps = {
 	row?: string
 	column?: string
-	width?: string
-	height?: string
+	image: string
 }
 
-const CardStyle = styled.div<CardProps>`
+const CardLink = styled(Link)<{ row?: string; column?: string }>`
 	grid-row: ${(props) => props.row || '1 / 1'};
 	grid-column: ${(props) => props.column || '1 / 1'};
-	width: ${(props) => props.width || '100%'};
-	height: ${(props) => props.height || '100%'};
-	background-image: url('https://picsum.photos/500/300?image=14');
+`
+
+const Card = styled.div<{ image?: string }>`
+	width: 100%;
+	height: 100%;
+	background-image: url(${(props) => props.image});
 	background-position: center;
 	background-repeat: no-repeat;
-	transform: scale(0.9);
+	background-size: cover;
+	/* transform: scale(0.9); */
 `
 
 export default function WorksCard(props: CardProps) {
 	return (
-		<Link to="/works/1">
-			<CardStyle
-				row={props.row}
-				column={props.column}
-				width={props.width}
-				height={props.height}
-			/>
-		</Link>
+		<CardLink to="/works/1" row={props.row} column={props.column}>
+			<Card image={props.image} />
+		</CardLink>
 	)
 }
