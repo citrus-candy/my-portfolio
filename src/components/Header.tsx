@@ -56,7 +56,7 @@ export default function Header() {
 
 	useLayoutEffect(() => {
 		setCurrentPath(location.pathname.split('/')[1])
-	})
+	}, [location.pathname])
 
 	return (
 		<Container>
