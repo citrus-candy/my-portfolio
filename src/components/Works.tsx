@@ -1,12 +1,8 @@
 import WorksCard from './works/Card'
 import styled, { createGlobalStyle } from 'styled-components'
-import Yobirinkun from '../assets/images/yobirinkun.png'
-import SummerScoringApp from '../assets/images/summer-scoring-app.png'
-import ShachihokoDiary from '../assets/images/shachihoko-diary.png'
-import Nayamin from '../assets/images/nayamin.png'
-import PrehackSns from '../assets/images/prehack-sns.png'
-import C3OpenCampus from '../assets/images/c3-open-campus.png'
-import UnityActionGame from '../assets/images/unity-action-game.png'
+import { createClient, MicroCMSListResponse } from 'microcms-js-sdk'
+import { useEffect, useState } from 'react'
+import { Works as _Works } from '../../types/microcms'
 
 const BodyColor = createGlobalStyle`
 	body {
@@ -41,25 +37,52 @@ const WorksContainer = styled.div`
 `
 
 export default function Works() {
-	return (
-		<Container>
-			<BodyColor />
-			<Wrapper>
-				<Title>Programming</Title>
-				<WorksContainer>
-					<WorksCard row="1 / 2" column="1 / 2" image={Yobirinkun} />
-					<WorksCard row="1 / 2" column="2 / 4" image={ShachihokoDiary} />
-					<WorksCard row="1 / 2" column="4 / 6" image={PrehackSns} />
-					<WorksCard row="2 / 3" column="1 / 3" image={Nayamin} />
-					<WorksCard row="2 / 4" column="3 / 4" image={SummerScoringApp} />
-					<WorksCard row="2 / 3" column="4 / 6" image={C3OpenCampus} />
-					<WorksCard row="3 / 4" column="1 / 3" image={UnityActionGame} />
-				</WorksContainer>
-			</Wrapper>
-			<Wrapper>
-				<Title>Music</Title>
-				<WorksContainer></WorksContainer>
-			</Wrapper>
-		</Container>
-	)
+	const client = createClient({
+		serviceDomain: process.env.REACT_APP_MICROCMS_DOMAIN!,
+		apiKey: process.env.REACT_APP_MICROCMS_APIKEY!,
+	})
+	const [contents, setContents] = useState<_Works[]>([])
+
+	useEffect(() => {
+		client
+			.getList({
+				endpoint: 'works',
+			})
+			.then((res: MicroCMSListResponse<_Works>) => {
+				setContents(res.contents)
+				console.log(contents)
+			})
+	}, [client, contents])
+
+	if (contents.length !== 0) {
+		return (
+			<Container>
+				<BodyColor />
+				<Wrapper>
+					<Title>Programming</Title>
+					<WorksContainer>
+						{contents.map((content) => {
+							return (
+								<WorksCard
+									row={content.row}
+									column={content.column}
+									content={content}
+								/>
+							)
+						})}
+					</WorksContainer>
+				</Wrapper>
+				<Wrapper>
+					<Title>Music</Title>
+					<WorksContainer></WorksContainer>
+				</Wrapper>
+			</Container>
+		)
+	} else {
+		return (
+			<Container>
+				<BodyColor />
+			</Container>
+		)
+	}
 }
