@@ -1,8 +1,8 @@
-import WorksCard from './works/Card'
+import WorksCard from '../modules/WorksCard'
 import styled, { createGlobalStyle } from 'styled-components'
 import { createClient, MicroCMSListResponse } from 'microcms-js-sdk'
 import { useEffect, useState } from 'react'
-import { Works as _Works } from '../../types/microcms'
+import { Works as _Works } from '../../../types/microcms'
 
 const BodyColor = createGlobalStyle`
 	body {

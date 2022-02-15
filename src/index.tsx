@@ -2,11 +2,11 @@ import { render } from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
-import BackgroundAnimation from './components/BackgroundAnimation'
-import Top from './components/Top'
-import Works from './components/Works'
-import About from './components/About'
-import Header from './components/Header'
+import BackgroundAnimation from './components/modules/BackgroundAnimation'
+import Top from './components/pages/Top'
+import Works from './components/pages/Works'
+import About from './components/pages/About'
+import Header from './components/modules/Header'
 
 render(
 	<BrowserRouter>
