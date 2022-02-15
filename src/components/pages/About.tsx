@@ -1,11 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import { FaGithub, FaTwitter, FaTimes } from 'react-icons/fa'
-
-const BodyColor = createGlobalStyle`
-	body {
-		background-color: #673ab7;
-	}
-`
 
 const Container = styled.div`
 	padding-top: 80px;
@@ -57,7 +51,6 @@ const IconButton = styled.a`
 export default function About() {
 	return (
 		<Container>
-			<BodyColor />
 			<CardContainer>
 				<Card>citrus candy</Card>
 				<Card>

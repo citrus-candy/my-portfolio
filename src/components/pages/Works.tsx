@@ -1,14 +1,8 @@
 import WorksCard from '../modules/WorksCard'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import { createClient, MicroCMSListResponse } from 'microcms-js-sdk'
 import { useEffect, useState } from 'react'
 import { Works as WorksType } from '../../../types/microcms'
-
-const BodyColor = createGlobalStyle`
-	body {
-		background-color: #009688;
-	}
-`
 
 const Container = styled.div`
 	padding-top: 80px;
@@ -79,10 +73,6 @@ export default function Works() {
 			</Container>
 		)
 	} else {
-		return (
-			<Container>
-				<BodyColor />
-			</Container>
-		)
+		return <Container></Container>
 	}
 }
