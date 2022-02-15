@@ -57,6 +57,7 @@ export default function Works() {
 						{contents.map((content) => {
 							return (
 								<WorksCard
+									key={content.id}
 									row={content.row}
 									column={content.column}
 									content={content}
