@@ -2,7 +2,7 @@ import WorksCard from '../modules/WorksCard'
 import styled, { createGlobalStyle } from 'styled-components'
 import { createClient, MicroCMSListResponse } from 'microcms-js-sdk'
 import { useEffect, useState } from 'react'
-import { Works as _Works } from '../../../types/microcms'
+import { Works as WorksType } from '../../../types/microcms'
 
 const BodyColor = createGlobalStyle`
 	body {
@@ -41,14 +41,14 @@ export default function Works() {
 		serviceDomain: process.env.REACT_APP_MICROCMS_DOMAIN!,
 		apiKey: process.env.REACT_APP_MICROCMS_APIKEY!,
 	})
-	const [contents, setContents] = useState<_Works[]>([])
+	const [contents, setContents] = useState<WorksType[]>([])
 
 	useEffect(() => {
 		client
 			.getList({
 				endpoint: 'works',
 			})
-			.then((res: MicroCMSListResponse<_Works>) => {
+			.then((res: MicroCMSListResponse<WorksType>) => {
 				setContents(res.contents)
 				console.log(contents)
 			})
