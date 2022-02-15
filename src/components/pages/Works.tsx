@@ -31,27 +31,26 @@ const WorksContainer = styled.div`
 `
 
 export default function Works() {
-	const client = createClient({
-		serviceDomain: process.env.REACT_APP_MICROCMS_DOMAIN!,
-		apiKey: process.env.REACT_APP_MICROCMS_APIKEY!,
-	})
 	const [contents, setContents] = useState<WorksType[]>([])
 
 	useEffect(() => {
+		const client = createClient({
+			serviceDomain: process.env.REACT_APP_MICROCMS_DOMAIN!,
+			apiKey: process.env.REACT_APP_MICROCMS_APIKEY!,
+		})
 		client
 			.getList({
 				endpoint: 'works',
 			})
 			.then((res: MicroCMSListResponse<WorksType>) => {
 				setContents(res.contents)
-				console.log(contents)
 			})
-	}, [client, contents])
+	}, [])
 
 	if (contents.length !== 0) {
+		console.log(contents)
 		return (
 			<Container>
-				<BodyColor />
 				<Wrapper>
 					<Title>Programming</Title>
 					<WorksContainer>
