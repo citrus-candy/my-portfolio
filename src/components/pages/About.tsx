@@ -1,26 +1,13 @@
 import styled from 'styled-components'
-import { FaGithub, FaTwitter, FaTimes } from 'react-icons/fa'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Container = styled.div`
 	padding-top: 80px;
 `
 
-const CardContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
-	padding: 40px;
-	font-size: 2.2rem;
-	font-family: 'Crafty Girls', cursive;
-`
-
-const Card = styled.div`
-	width: 350px;
-	height: 60px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	background-color: white;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+const Name = styled.div`
+	font-size: 3rem;
+	font-family: 'Italianno', cursive;
 `
 
 const ContentsWrapper = styled.div`
@@ -43,35 +30,41 @@ const Content = styled.div`
 	padding: 25px;
 `
 
+const IconButtonsWrapper = styled.div`
+	display: flex;
+`
+
 const IconButton = styled.a`
-	height: 40px;
+	display: flex;
+	align-items: center;
+	margin: 0 20px;
 	color: black;
 `
 
 export default function About() {
 	return (
 		<Container>
-			<CardContainer>
-				<Card>citrus candy</Card>
-				<Card>
-					<FaTimes />
-					<IconButton
-						href="https://github.com/citrus-candy"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FaGithub size="2.5rem" attributeType="" />
-					</IconButton>
-					<IconButton
-						href="https://twitter.com/fillis_y"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FaTwitter size="2.5rem" />
-					</IconButton>
-					<FaTimes />
-				</Card>
-			</CardContainer>
+			<ContentsWrapper>
+				<Content>
+					<Name>f i l l</Name>
+					<IconButtonsWrapper>
+						<IconButton
+							href="https://github.com/citrus-candy"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaGithub size={40} />
+						</IconButton>
+						<IconButton
+							href="https://twitter.com/fillis_y"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaTwitter size={40} />
+						</IconButton>
+					</IconButtonsWrapper>
+				</Content>
+			</ContentsWrapper>
 			<ContentsWrapper>
 				<Title>Skills</Title>
 				<Content>
